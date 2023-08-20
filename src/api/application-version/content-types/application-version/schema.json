@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "application_versions",
+  "info": {
+    "singularName": "application-version",
+    "pluralName": "application-versions",
+    "displayName": "Application Version"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "versionName": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    },
+    "size": {
+      "type": "string"
+    },
+    "urlApk": {
+      "type": "string"
+    },
+    "urlMod": {
+      "type": "string"
+    },
+    "application": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::application.application",
+      "inversedBy": "application_versions"
+    }
+  }
+}
